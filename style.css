@@ -1,0 +1,323 @@
+.dsrp-panel {
+    font-size: 0.9em;
+}
+
+.dsrp-head {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    font-weight: bold;
+}
+
+.dsrp-switch {
+    font-weight: normal;
+    font-size: 0.9em;
+    display: flex;
+    align-items: center;
+    gap: 4px;
+    cursor: pointer;
+}
+
+.dsrp-grid {
+    display: flex;
+    flex-direction: column;
+    gap: 6px;
+}
+
+.dsrp-f {
+    display: flex;
+    flex-direction: column;
+    gap: 2px;
+    flex: 1;
+    min-width: 0;
+    opacity: 0.9;
+    font-size: 0.85em;
+}
+
+.dsrp-f input,
+.dsrp-panel textarea {
+    width: 100%;
+    box-sizing: border-box;
+    font-size: 0.95em;
+}
+
+.dsrp-row {
+    display: flex;
+    gap: 6px;
+}
+
+.dsrp-row input {
+    min-width: 0;
+}
+
+.dsrp-toggles {
+    display: flex;
+    gap: 12px;
+    flex-wrap: wrap;
+    font-size: 0.85em;
+    opacity: 0.9;
+}
+
+.dsrp-toggles label {
+    display: flex;
+    align-items: center;
+    gap: 4px;
+    cursor: pointer;
+}
+
+.dsrp-panel details.dsrp-adv {
+    border: 1px dashed var(--SmartThemeBorderColor, #555);
+    border-radius: 4px;
+    padding: 4px 6px;
+}
+
+.dsrp-panel summary {
+    cursor: pointer;
+    opacity: 0.85;
+    user-select: none;
+    font-size: 0.9em;
+}
+
+.dsrp-inner {
+    display: flex;
+    flex-direction: column;
+    gap: 6px;
+    margin-top: 6px;
+}
+
+.dsrp-ta {
+    min-height: 100px;
+    resize: vertical;
+    margin-top: 2px;
+}
+
+.dsrp-btns {
+    display: flex;
+    gap: 4px;
+}
+
+.dsrp-btns .menu_button {
+    flex: 1;
+    text-align: center;
+    cursor: pointer;
+    padding: 4px 6px;
+    font-size: 0.85em;
+    user-select: none;
+}
+
+.dsrp-hint {
+    font-size: 0.72em;
+    opacity: 0.6;
+}
+
+/* ===== 发送键状态样式 ===== */
+
+/* 接管常态：绿色纸飞机 */
+#send_but.dsrp-active {
+    color: #6fe38f;
+}
+
+/* 运行中：琥珀色呼吸灯，一眼可见；点击即停止 */
+#send_but.dsrp-running {
+    color: #e3b341;
+    animation: dsrp-pulse 1.2s ease-in-out infinite;
+    cursor: pointer;
+}
+
+@keyframes dsrp-pulse {
+    0%, 100% { opacity: 1; text-shadow: 0 0 4px rgba(227, 179, 65, 0.8); }
+    50% { opacity: 0.45; text-shadow: 0 0 12px rgba(227, 179, 65, 1); }
+}
+
+/* B 补给条目列表 */
+.dsrp-bextra-list {
+    display: flex;
+    flex-direction: column;
+    gap: 2px;
+    max-height: 200px;
+    overflow-y: auto;
+    margin-top: 4px;
+}
+
+.dsrp-bextra-item {
+    display: flex;
+    align-items: center;
+    gap: 6px;
+    cursor: pointer;
+    font-size: 0.85em;
+    padding: 2px 4px;
+}
+
+.dsrp-bextra-item b {
+    font-weight: 600;
+    white-space: nowrap;
+}
+
+.dsrp-bextra-item .dsrp-hint {
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    flex: 1;
+    min-width: 0;
+}
+
+/* 记忆数据库表格 */
+.dsrp-mem-table {
+    max-height: 300px;
+    overflow-y: auto;
+    margin-top: 4px;
+}
+
+.dsrp-mem-tab {
+    width: 100%;
+    border-collapse: collapse;
+    font-size: 0.8em;
+}
+
+.dsrp-mem-tab th, .dsrp-mem-tab td {
+    border: 1px solid var(--SmartThemeBorderColor, #555);
+    padding: 3px 6px;
+    text-align: left;
+    vertical-align: top;
+}
+
+.dsrp-mem-tab th {
+    background: rgba(128, 128, 128, 0.2);
+}
+
+.dsrp-mem-tab td:first-child {
+    white-space: nowrap;
+    width: 40px;
+}
+
+.dsrp-mem-phase {
+    font-size: 0.8em;
+    padding: 4px;
+    border-left: 3px solid var(--SmartThemeQuoteColor, #888);
+    margin: 4px 0;
+}
+
+.dsrp-agent-stats {
+    font-family: monospace, monospace;
+    font-size: 0.7em;
+    opacity: 0.7;
+    padding: 2px 4px;
+    background: rgba(0,0,0,0.2);
+    border-radius: 3px;
+}
+
+/* 面板层级优化 */
+/* 折叠展开/收起完全交给 ST 原生 slideToggle（默认 display:none） */
+
+.dsrp-inner {
+    display: flex;
+    flex-direction: column;
+    gap: 6px;
+}
+
+/* 开关行紧凑化 */
+.dsrp-toggles {
+    display: flex;
+    gap: 8px;
+    flex-wrap: wrap;
+    font-size: 0.82em;
+    opacity: 0.9;
+}
+
+/* 按钮行统一 */
+.dsrp-btns {
+    display: flex;
+    gap: 4px;
+    flex-wrap: wrap;
+}
+
+.dsrp-btns .menu_button {
+    flex: 1;
+    min-width: 55px;
+    text-align: center;
+    cursor: pointer;
+    padding: 3px 5px;
+    font-size: 0.8em;
+    user-select: none;
+}
+
+
+/* 展开后的内容间距（用 margin 不碰 display——折叠交给 ST 原生） */
+.dsrp-panel .inline-drawer-content > * + * {
+    margin-top: 6px;
+}
+.dsrt-panel {
+    margin: 8px 0;
+    padding: 8px;
+    border: 1px solid var(--SmartThemeBorderColor, #666);
+    border-radius: 6px;
+    display: flex;
+    flex-direction: column;
+    gap: 6px;
+}
+.dsrt-title {
+    font-weight: bold;
+    margin-bottom: 2px;
+}
+.dsrt-label {
+    display: flex;
+    flex-direction: column;
+    gap: 2px;
+    font-size: 0.9em;
+    opacity: 0.9;
+}
+.dsrt-input {
+    width: 100%;
+    box-sizing: border-box;
+    font-size: 0.9em;
+}
+.dsrt-btnrow {
+    display: flex;
+    gap: 4px;
+    flex-wrap: wrap;
+}
+.dsrt-btnrow .menu_button {
+    flex: 1;
+    min-width: 60px;
+    text-align: center;
+    cursor: pointer;
+    font-size: 0.85em;
+    padding: 4px 6px;
+    user-select: none;
+}
+.dsrt-btnrow .dsrt-wide {
+    flex-basis: 100%;
+}
+.dsrt-log {
+    background: rgba(0, 0, 0, 0.35);
+    border-radius: 4px;
+    padding: 6px;
+    max-height: 260px;
+    overflow-y: auto;
+    font-family: monospace, monospace;
+    font-size: 11px;
+    line-height: 1.5;
+    word-break: break-all;
+    white-space: pre-wrap;
+}
+.dsrt-line {
+    margin-bottom: 1px;
+}
+.dsrt-time {
+    opacity: 0.5;
+}
+.dsrt-good { color: #6fe38f; }
+.dsrt-bad { color: #ff7b72; }
+.dsrt-warn { color: #e3b341; }
+.dsrt-info { color: #79c0ff; }
+.dsrt-head { font-weight: bold; color: var(--SmartThemeBodyColor, #ddd); }
+.dsrt-hint {
+    font-size: 0.75em;
+    opacity: 0.6;
+}
+.dsrt-inner {
+    display: flex;
+    flex-direction: column;
+    gap: 4px;
+    margin: 4px 0;
+}
